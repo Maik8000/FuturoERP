@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuThinButton21 = new ns1.BunifuThinButton2();
@@ -35,6 +36,8 @@
             this.txtbox_Pass = new ns1.BunifuTextbox();
             this.bunifuTextbox1 = new ns1.BunifuTextbox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuDragControl1 = new ns1.BunifuDragControl(this.components);
+            this.bunifuElipse1 = new ns1.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +67,7 @@
             this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
             this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.White;
             this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
-            this.bunifuThinButton21.Location = new System.Drawing.Point(59, 379);
+            this.bunifuThinButton21.Location = new System.Drawing.Point(66, 379);
             this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton21.Name = "bunifuThinButton21";
             this.bunifuThinButton21.Size = new System.Drawing.Size(220, 48);
@@ -89,7 +92,7 @@
             this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
             this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.SeaShell;
             this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
-            this.bunifuThinButton22.Location = new System.Drawing.Point(107, 455);
+            this.bunifuThinButton22.Location = new System.Drawing.Point(114, 455);
             this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
             this.bunifuThinButton22.Size = new System.Drawing.Size(125, 39);
@@ -99,7 +102,7 @@
             // 
             // txtbox_Pass
             // 
-            this.txtbox_Pass.BackColor = System.Drawing.Color.Silver;
+            this.txtbox_Pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(39)))), ((int)(((byte)(59)))));
             this.txtbox_Pass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtbox_Pass.BackgroundImage")));
             this.txtbox_Pass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.txtbox_Pass.ForeColor = System.Drawing.Color.White;
@@ -112,7 +115,7 @@
             // 
             // bunifuTextbox1
             // 
-            this.bunifuTextbox1.BackColor = System.Drawing.Color.Silver;
+            this.bunifuTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(39)))), ((int)(((byte)(59)))));
             this.bunifuTextbox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.BackgroundImage")));
             this.bunifuTextbox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuTextbox1.ForeColor = System.Drawing.Color.White;
@@ -132,6 +135,18 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 15;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // Form_Login
             // 
@@ -165,6 +180,8 @@
         private ns1.BunifuTextbox txtbox_Pass;
         private ns1.BunifuTextbox bunifuTextbox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private ns1.BunifuDragControl bunifuDragControl1;
+        private ns1.BunifuElipse bunifuElipse1;
     }
 }
 
