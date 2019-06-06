@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MCommerce
 {
-    public partial class Form1 : Form
+    public partial class Form_Login : Form
     {
-        public Form1()
+        public Form_Login()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace MCommerce
         }
 
         private void Btn_exit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void BunifuThinButton22_Click(object sender, EventArgs e)
         {
             Close();
         }
