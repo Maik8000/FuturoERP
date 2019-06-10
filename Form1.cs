@@ -31,5 +31,49 @@ namespace MCommerce
         {
             Close();
         }
+
+        private void BunifuTextbox1_Enter(object sender, EventArgs e)
+        {
+            //If para limpar o campo quando focado e preencher quando desfocado
+            if (txtbox_user.text == "Login")
+            {
+                txtbox_user.text = String.Empty;
+                txtbox_user.ForeColor = Color.White;
+            }
+        }
+
+        private void Txtbox_user_OnTextChange(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txtbox_user_Leave(object sender, EventArgs e)
+        {
+            //If para limpar o campo quando focado e preencher quando desfocado
+            if (txtbox_user.text == String.Empty)
+            {
+                txtbox_user.text = "Login";
+                txtbox_user.ForeColor = Color.White;
+            }
+
+        }
+
+        private void Txtbox_Pass_Enter(object sender, EventArgs e)
+        {
+           if(txtbox_Pass.text == "Senha")
+            {
+                txtbox_Pass.text = String.Empty;
+                txtbox_Pass.ForeColor = Color.White;
+            }
+        }
+
+        private void Txtbox_Pass_Leave(object sender, EventArgs e)
+        {
+            if (txtbox_Pass.text == String.Empty)
+            {
+                txtbox_Pass.text = "Senha";
+                txtbox_Pass.ForeColor = Color.White;
+            }
+        }
     }
 }
