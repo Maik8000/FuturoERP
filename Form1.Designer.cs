@@ -75,8 +75,10 @@
             this.button_login.Margin = new System.Windows.Forms.Padding(5);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(220, 48);
-            this.button_login.TabIndex = 1;
+            this.button_login.TabIndex = 0;
+            this.button_login.TabStop = false;
             this.button_login.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button_login.Click += new System.EventHandler(this.Button_login_Click);
             // 
             // button_exit
             // 
@@ -100,7 +102,8 @@
             this.button_exit.Margin = new System.Windows.Forms.Padding(5);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(125, 39);
-            this.button_exit.TabIndex = 2;
+            this.button_exit.TabIndex = 4;
+            this.button_exit.TabStop = false;
             this.button_exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.button_exit.Click += new System.EventHandler(this.BunifuThinButton22_Click);
             // 
@@ -114,8 +117,9 @@
             this.txtbox_Pass.Location = new System.Drawing.Point(32, 291);
             this.txtbox_Pass.Name = "txtbox_Pass";
             this.txtbox_Pass.Size = new System.Drawing.Size(285, 30);
-            this.txtbox_Pass.TabIndex = 3;
+            this.txtbox_Pass.TabIndex = 2;
             this.txtbox_Pass.text = "Senha";
+            this.txtbox_Pass.OnTextChange += new System.EventHandler(this.Txtbox_Pass_OnTextChange);
             this.txtbox_Pass.Enter += new System.EventHandler(this.Txtbox_Pass_Enter);
             this.txtbox_Pass.Leave += new System.EventHandler(this.Txtbox_Pass_Leave);
             // 
@@ -130,7 +134,7 @@
             this.txtbox_user.Location = new System.Drawing.Point(32, 231);
             this.txtbox_user.Name = "txtbox_user";
             this.txtbox_user.Size = new System.Drawing.Size(285, 30);
-            this.txtbox_user.TabIndex = 4;
+            this.txtbox_user.TabIndex = 1;
             this.txtbox_user.Tag = "";
             this.txtbox_user.text = "Login";
             this.txtbox_user.OnTextChange += new System.EventHandler(this.Txtbox_user_OnTextChange);
@@ -162,11 +166,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(152, 339);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(86, 324);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(136, 17);
             this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
+            this.label1.Text = "Insira Login e senha!";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Visible = false;
             // 
             // Form_Login
@@ -187,7 +194,6 @@
             this.Name = "Form_Login";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "q";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -200,12 +206,12 @@
         private System.Windows.Forms.Panel panel1;
         private ns1.BunifuThinButton2 button_login;
         private ns1.BunifuThinButton2 button_exit;
-        private ns1.BunifuTextbox txtbox_Pass;
         private ns1.BunifuTextbox txtbox_user;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ns1.BunifuDragControl bunifuDragControl1;
         private ns1.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Label label1;
+        private ns1.BunifuTextbox txtbox_Pass;
     }
 }
 

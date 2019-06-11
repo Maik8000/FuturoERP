@@ -116,7 +116,7 @@ namespace MCommerce
             string senhaBANCO = string.Empty;
 
             //String com a conexão do banco de dados
-            string ConnectionString = "server=localhost;User id=root;Persist Security Info=True;database=vsbd";
+            string ConnectionString = "server=localhost;Uid=root;Pwd=vssql;Persist Security Info=True;database=comercio";
 
             //String com a consulta a ser feita no banco de dados
             string Consulta = @"SELECT login,senha FROM usuarios WHERE login = @login";
@@ -145,8 +145,8 @@ namespace MCommerce
 
 
             //Comparação dos campos de login e senha
-            if((login == string.Empty) && (senha == string.Empty))
-            {
+            //if((login == "Login") && (senha == "Senha"))
+            //{
                 if((login == loginBANCO) && (senha == senhaBANCO))
                 {
                     this.DialogResult = DialogResult.OK;
@@ -158,12 +158,13 @@ namespace MCommerce
                     label1.Text = "Usuário ou senha inválidos!";
                     txtbox_user.Focus();
                 }
-            }
-            else
-            {
-                label1.Text = "Insira Login e senha!";
-                txtbox_user.Focus();
-            }
+           // }
+            //else
+            //{
+            //    label1.Visible = true;
+            //    label1.Text = "Insira Login e senha!";
+            //    txtbox_user.Focus();
+            //}
 
 
 
@@ -172,6 +173,16 @@ namespace MCommerce
         private void Label_status_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button_login_Click(object sender, EventArgs e)
+        {
+            ValidarUsuarioSenha();
+        }
+
+        private void Txtbox_Pass_OnTextChange(object sender, EventArgs e)
+        {
+            txtbox_Pass._TextBox.PasswordChar = '●';
         }
     }
     
