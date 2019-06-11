@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace MCommerce
 {
@@ -102,6 +103,75 @@ namespace MCommerce
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        //Método para validar o usuário e a senha com o banco de dados
+        private void ValidarUsuarioSenha()
+        {
+            string login = txtbox_user.text;
+            string senha = txtbox_Pass.text;
+
+            //variáveis para as informações do banco
+            string loginBANCO = string.Empty;
+            string senhaBANCO = string.Empty;
+
+            //String com a conexão do banco de dados
+            string ConnectionString = "server=localhost;User id=root;Persist Security Info=True;database=vsbd";
+
+            //String com a consulta a ser feita no banco de dados
+            string Consulta = @"SELECT login,senha FROM usuarios WHERE login = @login";
+
+            //Instanciar objetos do MySQL
+            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+            MySqlCommand CommandConnection = new MySqlCommand(Consulta, Connection);
+
+            //Adiciona o parametro a consulta
+            CommandConnection.Parameters.Add("@login", MySqlDbType.VarChar).Value = txtbox_user;
+
+            //Abrindo a conexão
+            Connection.Open();
+
+            //Executando um 'leitor'//Executando o comando SQL no banco de dados
+            MySqlDataReader Ler = CommandConnection.ExecuteReader();
+
+            //Lendo as informações no banco
+            while(Ler.Read())
+            {
+                loginBANCO = Ler["login"].ToString();
+                senhaBANCO = Ler["senha"].ToString();
+            }
+
+            Connection.Close();
+
+
+            //Comparação dos campos de login e senha
+            if((login == string.Empty) && (senha == string.Empty))
+            {
+                if((login == loginBANCO) && (senha == senhaBANCO))
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    label1.Visible = true;
+                    label1.Text = "Usuário ou senha inválidos!";
+                    txtbox_user.Focus();
+                }
+            }
+            else
+            {
+                label1.Text = "Insira Login e senha!";
+                txtbox_user.Focus();
+            }
+
+
+
+        }
+
+        private void Label_status_Click(object sender, EventArgs e)
+        {
+
         }
     }
     
