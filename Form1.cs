@@ -50,7 +50,6 @@ namespace MCommerce
             if (txtbox_user.text == "Login")
             {
                 txtbox_user.text = String.Empty;
-                txtbox_user.ForeColor = Color.White;
             }
         }
 
@@ -65,7 +64,6 @@ namespace MCommerce
             if (txtbox_user.text == String.Empty)
             {
                 txtbox_user.text = "Login";
-                txtbox_user.ForeColor = Color.White;
             }
 
         }
@@ -76,7 +74,6 @@ namespace MCommerce
             if (txtbox_Pass.text == "Senha")
             {
                 txtbox_Pass.text = String.Empty;
-                txtbox_Pass.ForeColor = Color.White;
             }
         }
 
@@ -86,7 +83,6 @@ namespace MCommerce
             if (txtbox_Pass.text == String.Empty)
             {
                 txtbox_Pass.text = "Senha";
-                txtbox_Pass.ForeColor = Color.White;
             }
         }
 
@@ -108,49 +104,73 @@ namespace MCommerce
         //Método para validar o usuário e a senha com o banco de dados
         private void ValidarUsuarioSenha()
         {
+            VerificaLogin VL = new VerificaLogin();
             string login = txtbox_user.text;
-            string senha = txtbox_Pass.text;
+            string senha = VL.ValidaCriptografiaSenha(txtbox_Pass.text);
 
             //variáveis para as informações do banco
             string loginBANCO = string.Empty;
             string senhaBANCO = string.Empty;
 
             //String com a conexão do banco de dados
-            string ConnectionString = "server=localhost;Uid=root;Pwd=vssql;Persist Security Info=True;database=comercio";
+            string ConnectionString = "server=localhost;Uid=root;Pwd=vssql;database=comercio;Allow User Variables=True";
 
             //String com a consulta a ser feita no banco de dados
-            string Consulta = @"SELECT login,senha FROM usuarios WHERE login = @login";
+            string Consulta = @"SELECT login,senha FROM usuarios WHERE login = @login and senha = @senha" ;
 
             //Instanciar objetos do MySQL
             MySqlConnection Connection = new MySqlConnection(ConnectionString);
-            MySqlCommand CommandConnection = new MySqlCommand(Consulta, Connection);
+            MySqlCommand SQLcommand = new MySqlCommand(Consulta, Connection);
 
             //Adiciona o parametro a consulta
-            CommandConnection.Parameters.Add("@login", MySqlDbType.VarChar).Value = txtbox_user;
+            SQLcommand.Parameters.AddWithValue("@login", login);
+            SQLcommand.Parameters.AddWithValue("@senha", senha);
 
             //Abrindo a conexão
             Connection.Open();
 
             //Executando um 'leitor'//Executando o comando SQL no banco de dados
-            MySqlDataReader Ler = CommandConnection.ExecuteReader();
+            MySqlDataReader Ler = SQLcommand.ExecuteReader();
+
+
+
+
+            //int retorno = Convert.ToInt32(SQLcommand.ExecuteScalar());
+
+            //SQLcommand.Parameters.Clear();
+            //SQLcommand.CommandType = CommandType.Text;
+
+
+
+
+            //Ler.Read();
+            //loginBANCO = Ler.GetString(1);
+            //senhaBANCO = Ler.GetString(2);
+
+
 
             //Lendo as informações no banco
-            while(Ler.Read())
-            {
-                loginBANCO = Ler["login"].ToString();
-                senhaBANCO = Ler["senha"].ToString();
-            }
+            //if (Ler.HasRows)
+            //{
+            while (Ler.Read())
+                {
+                    loginBANCO = Ler["login"].ToString();
+                    senhaBANCO = Ler["senha"].ToString();
+                }
+            //}
 
             Connection.Close();
 
 
             //Comparação dos campos de login e senha
-            //if((login == "Login") && (senha == "Senha"))
-            //{
+            if((login != "Login") && (senha != "Senha"))
+            {
                 if((login == loginBANCO) && (senha == senhaBANCO))
                 {
                     this.DialogResult = DialogResult.OK;
                     this.Close();
+                    FormPrincipal frm = new FormPrincipal();
+                    frm.Show();
                 }
                 else
                 {
@@ -158,7 +178,7 @@ namespace MCommerce
                     label1.Text = "Usuário ou senha inválidos!";
                     txtbox_user.Focus();
                 }
-           // }
+            }
             //else
             //{
             //    label1.Visible = true;
