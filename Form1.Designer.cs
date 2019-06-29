@@ -64,7 +64,7 @@
             this.button_login.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_login.BackgroundImage")));
             this.button_login.ButtonText = "Login";
             this.button_login.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_login.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_login.ForeColor = System.Drawing.Color.SeaGreen;
             this.button_login.IdleBorderThickness = 1;
             this.button_login.IdleCornerRadius = 20;
@@ -91,7 +91,7 @@
             this.button_exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_exit.BackgroundImage")));
             this.button_exit.ButtonText = "Sair";
             this.button_exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_exit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_exit.ForeColor = System.Drawing.Color.SeaGreen;
             this.button_exit.IdleBorderThickness = 1;
             this.button_exit.IdleCornerRadius = 20;
@@ -138,6 +138,7 @@
             this.txtbox_user.Tag = "";
             this.txtbox_user.text = "Login";
             this.txtbox_user.OnTextChange += new System.EventHandler(this.Txtbox_user_OnTextChange);
+            this.txtbox_user.KeyDown += new System.EventHandler(this.Txtbox_user_KeyDown);
             this.txtbox_user.Enter += new System.EventHandler(this.BunifuTextbox1_Enter);
             this.txtbox_user.Leave += new System.EventHandler(this.Txtbox_user_Leave);
             // 
@@ -166,11 +167,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(86, 324);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 17);
+            this.label1.Size = new System.Drawing.Size(130, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "Insira Login e senha!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

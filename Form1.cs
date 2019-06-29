@@ -27,11 +27,13 @@ namespace MCommerce
         public Form_Login()
         {
             InitializeComponent();
+            this.ActiveControl = txtbox_user;
+            txtbox_user._TextBox.Focus();
+            KeyPreview = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Btn_exit_Click(object sender, EventArgs e)
@@ -203,6 +205,15 @@ namespace MCommerce
         private void Txtbox_Pass_OnTextChange(object sender, EventArgs e)
         {
             txtbox_Pass._TextBox.PasswordChar = '●';
+        }
+
+        //Iniciado implementação da função de passar entre as textbox com a tecla enter.
+        private void Txtbox_user_KeyDown(object sender, EventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                txtbox_Pass._TextBox.Focus();
+            }
         }
     }
     
