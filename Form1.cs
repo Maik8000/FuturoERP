@@ -207,7 +207,7 @@ namespace MCommerce
             txtbox_Pass._TextBox.PasswordChar = '●';
         }
 
-        //Iniciado implementação da função de passar entre as textbox com a tecla enter.
+        //Iniciado implementação da função de passar entre as textbox com a tecla enterefefefefefefefefefefe
         private void Txtbox_user_KeyDown(object sender, EventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
