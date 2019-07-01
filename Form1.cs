@@ -207,12 +207,21 @@ namespace MCommerce
             txtbox_Pass._TextBox.PasswordChar = '●';
         }
 
-        //Iniciado implementação da função de passar entre as textbox com a tecla enterefefefefefefefefefefe
+        //Iniciado implementação da função de passar entre as textbox com a tecla enter
         private void Txtbox_user_KeyDown(object sender, EventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             {
                 txtbox_Pass._TextBox.Focus();
+            }
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+            //Botão de fechar tela
+            if (MessageBox.Show("Deseja encerrar a aplicação ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
             }
         }
     }
