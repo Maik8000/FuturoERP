@@ -206,6 +206,7 @@
             this.label2.Size = new System.Drawing.Size(20, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "-";
+            this.label2.Click += new System.EventHandler(this.Label2_Click_1);
             // 
             // Form_Login
             // 

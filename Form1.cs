@@ -224,6 +224,12 @@ namespace MCommerce
                 Application.Exit();
             }
         }
+
+        private void Label2_Click_1(object sender, EventArgs e)
+        {
+            //Botão minimizar tela
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
     
 }
