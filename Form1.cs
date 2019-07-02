@@ -17,7 +17,7 @@ namespace MCommerce
         //Função para movimentar a form pelo panel
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
-       
+
         [DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
@@ -34,6 +34,7 @@ namespace MCommerce
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           
         }
 
         private void Btn_exit_Click(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace MCommerce
         private void Txtbox_Pass_Leave(object sender, EventArgs e)
         {
             //If para limpar o campo quando focado e preencher quando desfocado
-            if (txtbox_Pass.text == String.Empty)
+            if (txtbox_Pass.text == String.Empty || txtbox_Pass._TextBox.Focus())
             {
                 txtbox_Pass.text = "Senha";
             }
@@ -108,7 +109,7 @@ namespace MCommerce
         {
             VerificaLogin VL = new VerificaLogin();
             string login = txtbox_user.text;
-            string senha = VL.ValidaCriptografiaSenha(txtbox_Pass.text);
+            string senha = VL.CriptografiaSenha(txtbox_Pass.text);
 
             //variáveis para as informações do banco
             string loginBANCO = string.Empty;
@@ -207,13 +208,44 @@ namespace MCommerce
             txtbox_Pass._TextBox.PasswordChar = '●';
         }
 
-        //Iniciado implementação da função de passar entre as textbox com a tecla enterefefefefefefefefefefe
+        //Iniciado implementação da função de passar entre as textbox com a tecla enter
         private void Txtbox_user_KeyDown(object sender, EventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
-            {
-                txtbox_Pass._TextBox.Focus();
-            }
+            //KeyEventArgs ke = e as KeyEventArgs;
+            //if (ke != null)
+            //{
+            //    if (ke.KeyCode == Keys.Enter)
+            //    {
+            //        txtbox_Pass._TextBox.Focus();
+            //    }
+            //}
+        }
+
+        private void Txtbox_user_KeyUp(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Txtbox_Pass_KeyDown(object sender, EventArgs e)
+        {
+            //KeyEventArgs ke = e as KeyEventArgs;
+            //if (ke != null)
+            //{
+            //    if (ke.KeyCode == Keys.Enter)
+            //    {
+            //        ValidarUsuarioSenha();
+            //    }
+            //}
+        }
+
+        private void ContextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
     

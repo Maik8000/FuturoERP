@@ -120,6 +120,7 @@
             this.txtbox_Pass.TabIndex = 2;
             this.txtbox_Pass.text = "Senha";
             this.txtbox_Pass.OnTextChange += new System.EventHandler(this.Txtbox_Pass_OnTextChange);
+            this.txtbox_Pass.KeyDown += new System.EventHandler(this.Txtbox_Pass_KeyDown);
             this.txtbox_Pass.Enter += new System.EventHandler(this.Txtbox_Pass_Enter);
             this.txtbox_Pass.Leave += new System.EventHandler(this.Txtbox_Pass_Leave);
             // 
@@ -139,6 +140,7 @@
             this.txtbox_user.text = "Login";
             this.txtbox_user.OnTextChange += new System.EventHandler(this.Txtbox_user_OnTextChange);
             this.txtbox_user.KeyDown += new System.EventHandler(this.Txtbox_user_KeyDown);
+            this.txtbox_user.KeyUp += new System.EventHandler(this.Txtbox_user_KeyUp);
             this.txtbox_user.Enter += new System.EventHandler(this.BunifuTextbox1_Enter);
             this.txtbox_user.Leave += new System.EventHandler(this.Txtbox_user_Leave);
             // 
@@ -154,7 +156,7 @@
             // 
             // bunifuDragControl1
             // 
-            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Fixed = false;
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.panel1;
             this.bunifuDragControl1.Vertical = true;
@@ -169,13 +171,14 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(86, 324);
+            this.label1.Location = new System.Drawing.Point(89, 334);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 16);
+            this.label1.Size = new System.Drawing.Size(173, 16);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Insira Login e senha!";
+            this.label1.Text = "Usuário ou senha inválidos!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Visible = false;
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // Form_Login
             // 
