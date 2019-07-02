@@ -39,12 +39,17 @@
             this.bunifuDragControl1 = new ns1.BunifuDragControl(this.components);
             this.bunifuElipse1 = new ns1.BunifuElipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.X = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.X);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -180,6 +185,32 @@
             this.label1.Visible = false;
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
+            // X
+            // 
+            this.X.AutoSize = true;
+            this.X.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.X.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.X.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.X.Location = new System.Drawing.Point(313, 9);
+            this.X.Name = "X";
+            this.X.Size = new System.Drawing.Size(21, 20);
+            this.X.TabIndex = 7;
+            this.X.Text = "X";
+            this.X.Click += new System.EventHandler(this.Label2_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(41)))), ((int)(((byte)(91)))));
+            this.label2.Location = new System.Drawing.Point(287, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 25);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "-";
+            this.label2.Click += new System.EventHandler(this.Label2_Click_1);
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,6 +230,8 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,6 +249,8 @@
         private ns1.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Label label1;
         private ns1.BunifuTextbox txtbox_Pass;
+        private System.Windows.Forms.Label X;
+        private System.Windows.Forms.Label label2;
     }
 }
 

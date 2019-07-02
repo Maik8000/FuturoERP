@@ -247,6 +247,21 @@ namespace MCommerce
         {
 
         }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+            //Botão de fechar tela
+            if (MessageBox.Show("Deseja encerrar a aplicação ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void Label2_Click_1(object sender, EventArgs e)
+        {
+            //Botão minimizar tela
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
     
 }
