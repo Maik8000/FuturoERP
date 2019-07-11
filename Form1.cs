@@ -166,14 +166,14 @@ namespace MCommerce
 
 
             //Comparação dos campos de login e senha
-            if((login != "Login") && (senha != "Senha"))
+            //if((login != "Login") && (senha != "Senha"))
             {
                 if((login == loginBANCO) && (senha == senhaBANCO))
                 {
                     this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    this.Hide();
                     FormPrincipal frm = new FormPrincipal();
-                    frm.Show();
+                    frm.ShowDialog();
                 }
                 else
                 {
